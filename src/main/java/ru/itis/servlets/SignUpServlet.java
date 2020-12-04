@@ -23,6 +23,10 @@ public class SignUpServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if(req.getSession().getAttribute("user") != null) {
+            resp.sendRedirect("/");
+            return;
+        }
         req.getRequestDispatcher("/jsp/signUp.jsp").forward(req,resp);
     }
 
@@ -34,9 +38,12 @@ public class SignUpServlet extends HttpServlet {
         form.setLastName(req.getParameter("lastName"));
         form.setEmail(req.getParameter("email"));
         form.setPassword(req.getParameter("password"));
+        form.setGender(req.getParameter("gender"));
+        form.setCity(req.getParameter("city"));
+        form.setAge(Integer.parseInt(req.getParameter("age")));
 
         signUpService.signUp(form);
 
-        resp.sendRedirect("/signIn");
+        resp.sendRedirect("/");
     }
 }

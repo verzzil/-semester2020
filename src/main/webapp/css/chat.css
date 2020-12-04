@@ -1,0 +1,136 @@
+body {
+    grid-template-areas: none;
+    background: #5953FF;
+    grid-template-columns: 80%;
+    grid-template-rows: 50px 80vh;
+    justify-content: center;
+    padding: 50px 0;
+    overflow: hidden !important;
+    font-family: "Trebuchet MS", serif;
+}
+
+#messages {
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100%;
+}
+
+#messageList {
+    border-right: 1px solid darkgrey;
+    overflow-y: scroll;
+}
+
+#messageList::-webkit-scrollbar {
+    display: none;
+}
+
+#messageList ul {
+    list-style: none;
+    display: grid;
+    grid-template-rows: 91px;
+}
+
+#messageList ul li {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr;
+    padding: 10px 0 10px 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#messageList ul li:hover {
+    background: #eeeeee;
+}
+
+#messageList ul li img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin-right: 10px;
+}
+
+#messageList ul li:not(:last-child) {
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+#messageList ul li h3 {
+    color: #5953FF;
+}
+
+#messageList ul li span {
+    padding-left: 5px;
+    color: dimgrey;
+}
+
+
+#messageHistory {
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+
+#history {
+    display: grid;
+    grid-auto-rows: min-content;
+    padding: 10px;
+    overflow-y: scroll;
+    row-gap: 10px;
+    margin-bottom: 10px;
+    overflow-x: hidden;
+    margin-top: 1px;
+}
+
+.myMessage {
+    justify-self: end;
+    background: #5953FF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 10px;
+    max-width: 49%;
+}
+
+.friendMessage {
+    background: #e4e4e4;
+    justify-self: start;
+    padding: 10px 20px;
+    max-width: 49%;
+    border-radius: 10px 10px 10px 0;
+}
+
+
+#sendMessage {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    align-items: center;
+    column-gap: 10px;
+    border-top: 1px solid #e4e4e4;
+    padding: 0 10px;
+}
+
+#messageText {
+    resize: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+#submitBtn {
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #e0e0e0;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#submitBtn:hover {
+    background: #d0d0d0;
+}
+
+.activeDialog {
+    background: #cfcfcf !important;
+}

@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh minmax(100vh, max-content) 200px;
+    row-gap: 20px;
+
+    grid-template-areas:
+            "greeting"
+            "content"
+            "footer";
+    overflow-x: hidden;
+}
+
+#plug {
+    position: fixed;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+    top: 0;
+}
+
+
+nav {
+    background: #77ffcd;
+    position: fixed;
+    height: 100vh;
+    width: 80px;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    color: #5953FF;
+    font-family: 'Fredoka One', cursive;
+    display: grid;
+    grid-template-rows: max-content max-content;
+    grid-template-columns: 80px 120px;
+}
+
+#search {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 80px;
+    padding: 10px 0;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+#searchBlock {
+    display: none;
+}
+
+#searchBlock * {
+    position: absolute;
+}
+
+#searchBlock input {
+    top: 10%;
+    left: -240%;
+    padding: 5px 20px;
+    transition: all 1s;
+    background: #fdfdfd;
+    border: 1px solid #000;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 0 0 5px black;
+}
+
+#searchBlock button {
+    top: -100%;
+    left: 13%;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    background: #77ffcd;
+    color: #5953FF;
+    font-weight: bold;
+    outline: none;
+    border: 2px solid #5953FF;
+    transition: all .3s;
+}
+
+#searchBlock button:hover {
+    color: #77ffcd;
+    background: #5953FF;
+}
+
+#layers {
+    z-index: 3;
+    position: fixed !important;
+}
+
+#layers, #layer1, #layer2, #layer3, #layer4, #layer5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 100vw;
+    overflow: hidden;
+    top: 0;
+}
+
+#layer1 {
+    background: #77FFCD;
+}
+
+#layer2, #layer5 {
+    background: #5953FF;
+}
+
+#layer3 {
+    background: #FFEA78;
+}
+
+#layer4 {
+    background: #fff;
+}
+
+#layer5 {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#closeSignInForm {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+    transition: all 2s ease-in-out;
+}
+
+#closeSignInForm:hover {
+    transform: rotate(calc(360deg * 20));
+}
+
+#signInForm {
+    display: grid;
+    width: 40%;
+    color: #fff;
+    font-family: 'Fredoka One', cursive;
+    z-index: 2;
+}
+
+#signInForm input {
+    outline: none;
+    border: none;
+}
+
+#signInForm input[type="text"] {
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px dashed #000;
+}
+
+#signInForm input[type="password"] {
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 10px;
+}
+
+#signInForm input:not([type="submit"]) {
+    padding: 20px;
+}
+
+#signInForm input[type="submit"] {
+    justify-self: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#signInForm h1 {
+    padding-bottom: 10px;
+}
+
+@keyframes layerAnim {
+    50% {
+        transform: translateX(200px);
+    }
+}
+
+
+#signIn, #menu, #logo {
+    text-align: center;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: .9em;
+    transition: background-color .3s;
+    height: 60px;
+}
+
+#signIn:hover, #menu:hover, #logo:hover, #search:hover {
+    background: #5de2b1;
+}
+
+#logo {
+    height: auto;
+    width: 80px;
+    position: absolute;
+    top: 45%;
+}
+
+#logo img {
+    width: 80px;
+}
+
+#hideMenu {
+    text-align: center;
+}
+
+#hideMenu ul {
+    list-style: none;
+}
+
+#hideMenu ul li {
+    padding: 20px 0;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#hideMenu ul li:hover, #hideMenu ul li:hover a {
+    color: #fff;
+}
+
+#hideMenu ul li form {
+    display: none;
+}
+
+#hideMenu ul li a {
+    color: #5953FF;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+}
+
+#layerSprite {
+    list-style: none;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 300px 200px 600px 300px;
+    z-index: 1;
+    bottom: 10%;
+    opacity: .7;
+}
+
+
+#greeting {
+    background: #5953FF;
+    color: #77ffcd;
+    /*font-family: 'Fredoka One', cursive;*/
+    font-family: 'Bungee Shade', cursive;
+    position: relative;
+    display: grid;
+    grid-area: greeting;
+}
+
+#slogan {
+    font-size: 2em;
+    opacity: 1;
+    align-self: center;
+    margin-left: 80px;
+}
+
+#sprites {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    perspective: 250px;
+}
+
+#sprites li {
+    opacity: .7;
+}
+
+#sprites, #sprites li {
+    position: absolute;
+}
+
+#loveMessageSprite {
+    left: 20%;
+    top: 10%;
+    animation: loveMessage 10s ease-in-out infinite;
+}
+
+#homeSprite {
+    right: 15%;
+    top: 27%;
+    animation: choco 8s ease-in-out infinite;
+}
+
+#chocoSprite {
+    bottom: 15%;
+    left: 10%;
+    animation: choco 10s ease-in-out infinite;
+}
+
+#handSprite {
+    left: 52%;
+    top: 44%;
+    animation: hand 10s ease-in-out infinite;
+    transform-origin: 0 50%;
+}
+
+#loveBookSprite {
+    right: 35%;
+    bottom: 5%;
+    transform-origin: 50% 50%;
+    animation: loveBook 1s ease-in-out infinite;
+}
+
+#loveIsSprite {
+    left: 56%;
+    top: 10%;
+    transition: all .3s;
+    transform: rotateZ(-20deg);
+}
+
+#loveIsSprite:hover {
+    opacity: 1;
+    cursor: help;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #77ffcd;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(89, 83, 255, .5);
+    transition: all .3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(89, 83, 255, 1);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+}
+
+@keyframes loveMessage {
+
+    25% {
+        transform: translateX(30px) translateY(20px);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    75% {
+        transform: translateX(-30px) translateY(-20px);
+    }
+
+}
+
+@keyframes choco {
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes hand {
+    50% {
+        transform: translate(-20px, 20px);
+    }
+}
+
+@keyframes loveBook {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.105)
+    }
+    40% {
+        transform: scale(1.14)
+    }
+}
+
+
+#content {
+    display: grid;
+    grid-area: content;
+    margin-right: 80px;
+    grid-template-rows: min-content 1fr;
+    row-gap: 20px;
+}
+
+#content h1 {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+}
+
+#userList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 330px);
+    justify-content: center;
+    list-style: none;
+    gap: 10px;
+}
+
+#userList li {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 400px;
+}
+
+#userList li > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 3s;
+    z-index: -1;
+}
+
+#userList li:hover > img {
+    transform: scale(1.5);
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transform-origin: 50% 100%;
+    transform: translateX(331px);
+    transition: all .3s ease-in-out;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    z-index: 1;
+    justify-items: center;
+}
+
+.overlay h2 {
+    margin-top: 5px;
+}
+
+.overBack {
+    position: absolute;
+    background: #5953FF;
+    opacity: .7;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#userList li:hover > .overlay {
+    transform: translateX(0px);
+}
+
+.countLikes {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    border-radius: 10px 0 0 0;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+
+.userInfo {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: repeat(2, 30px) 1fr;
+}
+
+
+footer {
+    grid-area: footer;
+    background: #5953FF;
+    color: #fff;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-family: 'Fredoka One', cursive;
+    margin-right: 80px;
+}
+
+footer a {
+    color: #fff;
+}
+
+#filters {
+    position: fixed;
+    z-index: 20;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    display: none;
+    grid-template-columns: 120px 1fr 1fr;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#filters input, #filters select {
+    padding: 10px;
+}
+
+#submit-search-user-by-criteria {
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #000;
+    transition: all .3s;
+}
+
+#submit-search-user-by-criteria:hover {
+    background: #d0d0d0;
+}

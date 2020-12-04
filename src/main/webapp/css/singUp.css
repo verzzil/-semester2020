@@ -1,0 +1,55 @@
+body {
+    overflow: hidden;
+}
+
+#signUpForm {
+    display: grid;
+    width: 40%;
+    z-index: 2;
+}
+
+#signUpForm input[name="firstName"] {
+    border-radius: 10px 10px 0 0;
+}
+#signUpForm input:not(:last-child) {
+    border-bottom: 1px dashed #000;
+}
+#signUpForm input[type="password"] {
+    border-radius: 0 0 10px 10px;
+    border-bottom: none !important;
+}
+
+#signUpForm input {
+    outline: none;
+    border: none;
+}
+#signUpForm input:not([type="submit"]) {
+    padding: 20px;
+}
+#signUpForm input[type="submit"] {
+    justify-self: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer
+}
+#signUpForm h1 {
+    font-family: 'Fredoka One', cursive;
+    color: #fff;
+}
+#gender, #signUpForm h1 {
+    margin-bottom: 20px;
+}
+
+#goToMain {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    transition: all 2s;
+}
+#goToMain:hover {
+    transform: scale(1.2);
+}
+
+#layerSprite {
+    animation: layerAnim 20s ease-in-out infinite;
+}

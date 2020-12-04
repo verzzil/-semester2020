@@ -1,0 +1,99 @@
+#dialog-window-for-filters, #dialog-for-user-card, #dialog-window-for-sign-in {
+    position: fixed;
+    width: 35%;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    background: #fff;
+    padding: 10px 30px;
+    border-radius: 10px;
+    display: none; /* change to grid */
+    grid-gap: 10px;
+    grid-template-rows: repeat(5, 50px);
+}
+
+#search-by-gender, #search-by-age, #search-by-city {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#search-by-age {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+input#from_age, input#to_age {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+}
+
+
+#dialog-for-user-card {
+    display: none;
+    grid-template-rows: 1fr 1fr;
+}
+
+#user-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#user-card-info {
+    display: grid;
+}
+
+#user-card-info h2 {
+    text-align: center;
+}
+
+#user-card-age-info, #user-card-city-info, #user-card-short-about-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+#user-card-like-profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#dialog-window-for-sign-in {
+    grid-template-rows: none;
+    justify-content: center;
+    padding: 30px 0;
+}
+#dialog-window-for-sign-in form {
+    display: grid;
+}
+#dialog-window-for-sign-in input {
+    display: block;
+}
+#dialog-window-for-sign-in input:not([type="submit"]) {
+    padding: 10px;
+    outline: none;
+}
+#dialog-window-for-sign-in input[type="text"] {
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #000;
+    border-bottom: 1px dashed #000;
+}
+#dialog-window-for-sign-in input[type="password"] {
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #000;
+    border-top: 1px dashed #000;
+}
+#dialog-window-for-sign-in input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+#dialog-window-for-sign-in h1 {
+    margin-top: 0;
+}
+#dialog-window-for-sign-in span {
+    font-size: .9em;
+}

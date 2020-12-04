@@ -1,0 +1,110 @@
+body {
+    grid-template-rows: 1fr 80px 2fr max-content;
+    grid-template-columns: 100px 1fr;
+    grid-template-areas:
+            "nav article"
+            "nav toolbar"
+            "nav forEU"
+            "nav footer";
+}
+
+#toolbar {
+    grid-area: toolbar;
+    background: rgba(82, 179, 164, .7);
+} /*  rgba(52, 221, 181, .7)*/
+#toolbar a {
+    color: #fff;
+}
+a {
+    text-decoration: none;
+}
+
+#available-sections {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+}
+
+#available-sections li {
+    display: block;
+    height: 100%;
+    line-height: 80px;
+    cursor: pointer;
+    text-align: center;
+    transition: .3s all;
+}
+
+#available-sections li:hover {
+    background: rgba(82, 179, 164, .8);
+}
+
+
+
+#for-each-user {
+    grid-area: forEU;
+    padding: 20px 0;
+}
+
+#thoughts ul {
+    padding: 0 10px;
+    display: grid;
+}
+
+#thoughts ul li {
+    display: grid;
+    padding: 25px 0;
+    margin-left: 20%;
+    margin-right: 20%;
+    grid-template-columns: 10fr 1fr;
+    position: relative;
+}
+
+#thoughts img {
+    cursor: pointer;
+}
+
+#thoughts ul li:not(:last-child), #liked-users ul li:not(:last-child) {
+    border-bottom: 1px dashed #000;
+}
+
+.thought-like {
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+
+.thought-like img, .thought-like span {
+    cursor: pointer;
+}
+
+.thought-like img {
+    width: 20px;
+}
+
+#liked-users {
+    display: none;
+}
+
+#liked-users ul {
+    display: grid;
+}
+#liked-users ul li {
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+
+footer {
+    margin-top: 10px;
+}
+
+ul {
+    margin:0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}

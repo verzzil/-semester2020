@@ -1,0 +1,17 @@
+:root {
+    --columns: 9;
+    --yellow: rgba(112, 135, 78, 1);
+    --pink: rgba(254, 131, 255, 1);
+    --blue: rgba(82, 179, 164, 1);
+    --green: rgba(72, 89, 135, 1);
+    --white: rgba(248, 255, 229, 1);
+}
+
+body {
+    grid-template-rows: 2% 1fr max-content;
+    grid-template-columns: 100px 1fr;
+    grid-template-areas:
+            "nav search-panel"
+            "nav article"
+            "nav footer";
+}

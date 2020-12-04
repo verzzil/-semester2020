@@ -2,10 +2,10 @@ package ru.itis.services.signIn;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import ru.itis.dto.SignInForm;
+import ru.itis.dto.UserDto;
 import ru.itis.models.User;
-import ru.itis.repositories.UsersRepository;
+import ru.itis.repositories.users.UsersRepository;
 
-import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 public class SignInServiceImpl implements SignInService {
@@ -20,15 +20,13 @@ public class SignInServiceImpl implements SignInService {
 
 
     @Override
-    public boolean signIn(SignInForm form) {
+    public Optional<UserDto> signIn(SignInForm form) {
+        Optional<User> user = usersRepository.exitUser(form.getEmail());
 
-        Optional<User> user = usersRepository.findUserByEmail(form.getEmail());
-
-        if(user.isPresent()) {
+        if(user.isPresent())
             if(passwordEncoder.matches(form.getPassword(), user.get().getHashPassword()))
-                return true;
-        }
-        return false;
+                return Optional.ofNullable(user.get().toUserDto());
 
+        return Optional.empty();
     }
 }

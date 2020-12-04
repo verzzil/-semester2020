@@ -4,7 +4,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.itis.dto.SignUpForm;
 import ru.itis.models.User;
-import ru.itis.repositories.UsersRepository;
+import ru.itis.repositories.users.UsersRepository;
 
 public class SignUpServiceImpl implements SignUpService {
 
@@ -25,6 +25,9 @@ public class SignUpServiceImpl implements SignUpService {
                 .lastName(form.getLastName())
                 .email(form.getEmail())
                 .hashPassword(passwordEncoder.encode(form.getPassword()))
+                .gender(form.getGender())
+                .city(form.getCity())
+                .age(form.getAge())
                 .build();
 
         usersRepository.save(user);

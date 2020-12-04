@@ -1,0 +1,47 @@
+body {
+    display: grid;
+    grid-template-areas: none;
+    grid-template-rows: max-content;
+}
+#registration {
+    display: grid;
+    text-align: center;
+    width: 40%;
+    align-self: start;
+}
+#registration form {
+    display: grid;
+}
+
+#registration input {
+    outline: none;
+    border: none;
+}
+#registration form input:not([type="submit"]) {
+    padding: 20px;
+}
+#registration form input[name="name"], #registration form input[name="old-password"] {
+    border-radius: 10px 10px 0 0;
+}
+#registration form input[name="city"], #registration form input[name="repeat-new-password"] {
+    border-radius: 0 0 10px 10px;
+}
+
+#registration form input[type="submit"] {
+    justify-self: center;
+    padding: 10px 10px;
+    border-radius: 100px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#registration form h3 {
+    margin-bottom: 10px;
+}
+#registration form input:not([type="submit"]) {
+    border-bottom: 1px dashed #000;
+}
+
+#layerSprite {
+    animation: layerAnim 20s ease-in-out infinite;
+}

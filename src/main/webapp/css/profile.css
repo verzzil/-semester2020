@@ -1,0 +1,162 @@
+body {
+    background: #5953FF;
+    display: grid;
+    grid-template-areas: none;
+    grid-template-rows: minmax(80%, max-content);
+    justify-items: center;
+    padding: 20px 0;
+}
+#profile {
+    width: 80%;
+    background: #fff;
+    padding: 20px;
+}
+
+#user {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    margin-bottom: 10px;
+    row-gap: 10px;
+}
+#user > img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#user form {
+    display: grid;
+    justify-content: center;
+}
+#user form input {
+    outline: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid dimgrey;
+    cursor: pointer;
+    transition: all .3s;
+}
+#user form input:hover {
+    background: #d0d0d0;
+}
+
+#userInfo {
+    margin-left: 20px;
+    display: grid;
+    grid-template-rows:70px 1fr;
+}
+
+#userInfo2 {
+    display: grid;
+    grid-template-columns: 90px 3fr;
+    grid-auto-rows: min-content;
+    row-gap: 20px;
+}
+
+#likeUser {
+    justify-self: end;
+    display: grid;
+    grid-template-columns: 33px min-content;
+    grid-column-start: 2;
+    align-items: center;
+    cursor: pointer;
+}
+#likeUser span {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+
+#selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+}
+#selection span {
+    padding: 10px 0;
+    background: #e4e4e4;
+    cursor: pointer;
+}
+#selection span:first-child {
+    border-right: 1px solid #fff;
+}
+
+#thoughts {
+    display: grid;
+    justify-items: center;
+}
+#thoughts ul {
+    display: grid;
+    list-style: none;
+    width: 90%;
+    grid-auto-rows: minmax(60px,max-content);
+}
+#thoughts ul li {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 25px;
+    align-items: center;
+}
+#thoughts ul li:not(:last-child) {
+    border-bottom: 1px dashed #d0d0d0;
+}
+#thoughts ul li span {
+    padding: 10px 0 10px 5px;
+}
+
+.thoughtsLike, .deleteThought {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+}
+
+.actionsBlock {
+    width: 100%;
+    height: 100%;
+    align-self: start;
+}
+.deleteThought {
+    top:5px;
+}
+.thoughtsLike {
+    bottom: 0;
+}
+
+#likedUsers {
+    display: none;
+    justify-items: center;
+}
+#likedUsers ul {
+    display: grid;
+    list-style: none;
+    width: 90%;
+    grid-auto-rows: minmax(50px,max-content);
+    text-align: center;
+}
+#likedUsers ul li {
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+#likedUsers ul li:not(:last-child) {
+    border-bottom: 1px dashed #d0d0d0;
+}
+
+.thoughtsLike img:hover ~ span {
+    display: block;
+}
+
+.countLikesThought {
+    width: max-content;
+    display: none;
+    position: absolute;
+    right:10px;
+    bottom: 23px;
+    z-index: 1;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+    padding: 5px !important;
+    border-radius: 10px 10px 0;
+}

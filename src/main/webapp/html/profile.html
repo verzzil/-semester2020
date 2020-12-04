@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/profile-page/main.css">
+    <link rel="stylesheet" href="../css/profile-page/profile.css">
+    <link rel="stylesheet" href="../css/common/left-menu.css">
+    <link rel="stylesheet" href="../css/common/main.css">
+    <script src=".https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/left-menu.js"></script>
+</head>
+<body>
+
+<!-- LEFT MENU -->
+<nav>
+    <img src="../images/menured.png" alt="" width="20">
+    <a href="#" id="logo"><img src="../images/logo.png"></a>
+</nav>
+<ul id="menu">
+    <a href="#"><li>Мой профиль</li></a>
+    <a href="#"><li>Мои сообщения</li></a>
+    <a href="#"><li>Пока не знаю что</li></a>
+</ul>
+
+<!-- CONTENT -->
+<div id="content">
+    <div id="profile">
+
+        <img src="../images/1.jpg" id="profile-photo">
+        <div id="profile-info">
+            <h2 id="profile-user-name">Khannanov Albert</h2>
+            <div id="profile-age-info">
+                <label for="user-age">Возраст:</label>
+                <span id="user-age">20</span>
+            </div>
+            <div id="profile-city-info">
+                <label for="user-city">Город:</label>
+                <span id="user-city">Kazan</span>
+            </div>
+            <div id="profile-about-info">
+                <label for="user-short-about">О себе:</label>
+                <span id="user-short-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto esse est sequi. Asperiores ducimus officia pariatur quasi quibusdam, ut.</span>
+            </div>
+            <div id="profile-like-profile">
+                <div class="user-card-like">
+                    <img src="../images/disactive_like.png" width="20">
+                    <span>100</span>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="typical-btn" style="padding: 10px">Написать сообщение</a>
+
+    </div>
+</div>
+
+<div id="toolbar">
+    <ul id="available-sections">
+        <a href="#thoughts" style="background: rgba(82, 179, 164, 1); text-decoration: underline"><li class="thoughts">Мысли</li></a>
+        <a href="#liked-users"><li class="liked-users">Понравившиеся пользователи</li></a>
+    </ul>
+</div>
+
+<div id="for-each-user">
+    <div id="thoughts">
+        <ul>
+            <li><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, temporibus.</span>
+                <div class="thought-like"><img src="../images/disactive_like.png" alt=""><span>100</span></div>
+            </li>
+            <li><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum est eveniet iste nemo quaerat qui quos repellat sapiente voluptatum!</span>
+                <div class="thought-like"><img src="../images/disactive_like.png" alt=""><span>100</span></div>
+            </li>
+            <li><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus dolorum eum excepturi facilis fugiat itaque, iusto nam nobis odit, omnis, quaerat quidem quos rem repudiandae rerum veritatis voluptatum.</span>
+                <div class="thought-like"><img src="../images/disactive_like.png" alt=""><span>100</span></div>
+            </li>
+        </ul>
+    </div>
+    <div id="liked-users">
+        <ul>
+            <li>
+                <h4>Пользователь <a href="#">Khannanov Albert</a> проявил симпатию к <a href="#">Naruto</a></h4>
+            </li>
+            <li>
+                <h4>Пользователь <a href="#">Khannanov Albert</a> проявил симпатию к <a href="#">Saske</a></h4>
+            </li>
+            <li>
+                <h4>Пользователь <a href="#">Khannanov Albert</a> проявил симпатию к <a href="#">Sakura</a></h4>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <img src="../images/footerlogo.png" alt="">
+    <ul>
+        <li><a href="#">О сайте</a></li>
+        <li><a href="#">Реклама</a></li>
+        <li><a href="#">Пользовательско соглашение</a></li>
+    </ul>
+    <h3>All right reserved 2020</h3>
+</footer>
+
+</body>
+</html>

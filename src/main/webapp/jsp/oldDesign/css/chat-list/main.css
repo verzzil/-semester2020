@@ -1,0 +1,61 @@
+body {
+    grid-template-rows: max-content 1fr;
+    grid-template-columns: 100px 1fr;
+    grid-template-areas:
+        "nav chat-list"
+        "nav footer";
+}
+
+#chat-list {
+    grid-area: chat-list;
+   min-height: 100vh;
+}
+
+#chat-list a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+#chat-list h2 {
+    text-align: center;
+}
+
+#chat-list ul {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #dedede;
+}
+
+#chat-list ul li a {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    padding: 10px;
+}
+
+#chat-list ul li:hover {
+    background: #f3f3f3;
+}
+
+#chat-list ul li:not(:last-child) {
+    border-bottom: dashed 3px #f3f3f3;
+}
+
+#chat-list ul li div {
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#chat-list ul li div span {
+    font-weight: bold;
+}
+
+#chat-list ul li div p {
+    margin: 0;
+    padding: 10px 0 0 10px;
+}
+
+.time-last-msg {
+    justify-self: end;
+}

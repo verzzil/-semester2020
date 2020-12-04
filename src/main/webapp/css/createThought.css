@@ -1,0 +1,28 @@
+body {
+    grid-template-areas: none;
+    grid-template-rows: 100px 1fr;
+    background: #5953FF;
+    align-items: center;
+    justify-items: center;
+}
+
+body h1 {
+    font-family: 'Fredoka One', cursive;
+    color: #fff;
+}
+#createThought {
+    display: grid;
+    row-gap: 20px;
+}
+#createThought input {
+    justify-self: center;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s;
+}
+#createThought input:hover {
+    background: #d0d0d0;
+}

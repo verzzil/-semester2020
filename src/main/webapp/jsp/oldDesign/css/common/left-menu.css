@@ -1,0 +1,57 @@
+#logo {
+    opacity: .8;
+    transition: all .3s;
+}
+#logo:hover {
+    opacity: 1;
+}
+nav > img {
+    position: absolute;
+    top:5%;
+    justify-self: center;
+    opacity: .8;
+    transition: all .3s;
+    cursor: pointer;
+}
+nav > img:hover {
+    opacity: 1;
+}
+#menu {
+    display: none;
+    position: fixed;
+    padding: 0;
+    z-index: 2;
+    margin: 0 0 0 100px;
+    background: #1C2439;
+    list-style: none;
+    width: 150px;
+    border-radius: 0 0 10px 0;
+    overflow: hidden;
+    font-size: .8em;
+}
+#menu a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+#menu li {
+    cursor: pointer;
+    transition: all .3s;
+}
+#menu li:hover {
+    background: #252B3B;
+}
+#menu li > a {
+    padding: 15px 20px;
+    font-size: 1.04em;
+}
+#menu li > form > input[type="submit"] {
+    padding: 15px 20px;
+    width: 100%;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border: none;
+    text-align: left;
+    color: #fff;
+}

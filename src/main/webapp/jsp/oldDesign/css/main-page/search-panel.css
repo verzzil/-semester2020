@@ -1,0 +1,45 @@
+#search-panel {
+    display: grid;
+    grid-area: search-panel;
+    /*grid-template-columns: 1fr 1fr;*/
+    background: #f3f3f3;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 50px;
+    z-index: 1;
+}
+
+#search-panel input {
+    background: #fff;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    grid-auto-rows: max-content;
+    padding: 0 15px;
+    height: 100%;
+}
+
+#show-window-for-filters {
+    height: 80%;
+    width: 20%;
+    justify-self: right;
+}
+
+#search-panel select {
+    border-radius: 20px;
+    outline: none;
+}
+
+#search-user-by-firstname-and-lastname {
+    display: grid;
+    grid-template-columns: 8fr 5fr;
+    grid-gap: 10px;
+    height: 80%;
+    margin-left: 130px;
+}
+
+#show-sign-in-window {
+    padding: 10px 20px;
+}
